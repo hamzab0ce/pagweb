@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Descarga de Archivos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .file-info {
+            margin-bottom: 20px;
+        }
+        .file-info h2 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+        .file-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Descarga de Archivos</h1>
+
+        <div class="file-info">
+            <h2>Nombre del Archivo: archivo-ejemplo.pdf</h2>
+            <p>Tamaño: 2 MB</p>
+            <p>Tipo: PDF</p>
+            <p>Descripción: Este es un archivo PDF de ejemplo que puedes descargar.</p>
+        </div>
+
+        <!-- Botón para descargar el archivo -->
+        <a href="URL_DEL_ARCHIVO" download="archivo-ejemplo.pdf">
+            <button>Descargar Archivo</button>
+        </a>
+    </div>
+</body>
+</html>
