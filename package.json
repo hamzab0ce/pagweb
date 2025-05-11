@@ -1,11 +1,12 @@
 {
-  "name": "neptunegames",
+  "name": "waverepacks",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start && pnpm prisma db pull && pnpm prisma generate",
+    "start": "next start",
+    "postinstall": "prisma generate",
     "lint": "next lint"
   },
   "dependencies": {
