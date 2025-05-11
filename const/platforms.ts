@@ -1,0 +1,1 @@
+export const platforms = ["All", "PC", "Android", "PS2"];
