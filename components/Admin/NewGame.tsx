@@ -17,7 +17,7 @@ export type FormStateError = {
 
 export default function NewGameForm() {
   const [formState, setFormState] = useState<{
-    error: FormStateError | string |null;
+    error: FormStateError | string[] |null;
     data: GamesWithLinks | null;
   }>({
     error: null,

@@ -50,9 +50,9 @@ export default async function createGame(formData: FormData) {
       error: null,
       data: game
     }
-  } catch {
+  } catch (e) {
     return { 
-      error: "Database error",
+      error: [JSON.stringify(e)],
       data: null
     }
   }
