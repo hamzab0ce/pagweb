@@ -25,7 +25,7 @@ export default function GameTemplate({ game }: { game: GamesWithLinks }) {
             <img
               src={game.cover_url}
               alt={game.title}
-              className="object-cover h-full w-full  rounded-xl"
+              className="object-cover h-full w-full"
             />
           </div>
           <div className="">
@@ -53,6 +53,11 @@ export default function GameTemplate({ game }: { game: GamesWithLinks }) {
               {game.serial && (
                 <li>
                   <b>Serial:</b> {game.serial}
+                </li>
+              )}
+              {game.password && (
+                <li>
+                  <b>Contraseña:</b> {game.password}
                 </li>
               )}
             </ul>
