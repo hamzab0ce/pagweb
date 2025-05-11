@@ -1,5 +1,4 @@
 "use client";
-import createGame from "@/app/actions/newGame";
 import { useState } from "react";
 import DownloadLinksForm, { LinkInput } from "./DownloadsLinks";
 import Input from "./Input";
@@ -40,8 +39,9 @@ export default function NewGameForm() {
     formData.append("requeriments", requeriments[0]);
     formData.append("download_links", JSON.stringify(downloadLinks));
     formData.append("platform", platform[0]);
-    const response = await createGame(formData);
-    setFormState(response);
+    const response = await fetch("/api/games", { method: "POST", body: formData });
+    const result = await response.json();
+    setFormState(result);
   };
 
   return (
