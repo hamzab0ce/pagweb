@@ -25,7 +25,7 @@ export default function GameTemplate({ game }: { game: GamesWithLinks }) {
             <img
               src={game.cover_url}
               alt={game.title}
-              className="object-cover h-full w-full"
+              className="object-contain h-full w-full"
             />
           </div>
           <div className="">

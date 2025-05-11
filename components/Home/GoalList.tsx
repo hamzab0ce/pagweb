@@ -24,7 +24,7 @@ export default function GoalList({ games, totalGames }: {
   
   return (
     <section className="flex w-full flex-col p-5 justify-center bg-zinc-900 border border-zinc-800 shadow shadow-black rounded-2xl">
-      <ul className="flex w-full flex-wrap gap-2 my-5">
+      <ul className="flex w-full flex-wrap gap-5 my-5">
         {filteredGames.map((game) => {
           return <GoalCard key={game.id} game={game} />;
         })}
