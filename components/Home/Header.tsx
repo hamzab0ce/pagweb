@@ -32,7 +32,7 @@ export default function Header() {
         </h1>
       </div>
       <nav className="flex gap-5 font-medium text-zinc-100">
-        <a href="#">Inicio</a>
+        <a href="/">Inicio</a>
         <Dropdown
           selectedOption={selectedOption}
           onChange={handleDropdownChange}
