@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ error: null, data: game });
-  } catch (e: any) {
+  } catch (e : any) {
     console.error("ERROR en createGame:", e);
     return NextResponse.json(
       { error: [e.message || "Error interno del servidor"], data: null },

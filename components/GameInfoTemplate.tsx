@@ -1,10 +1,15 @@
+"use client"
 import type { GamesWithLinks } from "@/app/actions/getGames";
-import { useModalStore } from "@/stores/modalStore";
 import DownloadLinkList from "./DownLoadLinkList";
 import GenreBadge from "./GenreBadge";
+import { useRouter } from "next/navigation";
 
 export default function GameTemplate({ game }: { game: GamesWithLinks }) {
-  const modalStore = useModalStore();
+  const router = useRouter();
+  const handleCloseModal = () => {
+    router.back();
+  } 
+
   return (
     <>
       <div className="flex items-center justify-between p-5 border-b border-solid border-zinc-800 rounded-t">
@@ -13,7 +18,7 @@ export default function GameTemplate({ game }: { game: GamesWithLinks }) {
         </h3>
         <button
           className="p-1 ml-auto cursor-pointer bg-transparent border-0 text-zinc-300 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-          onClick={() => modalStore.closeModal()}
+          onClick={handleCloseModal}
         >
           ×
         </button>

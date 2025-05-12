@@ -1,6 +1,5 @@
 import Filters from "@/components/Home/Filters";
 import GoalWrapper from "@/components/Home/GoalWrapper";
-import GameModal from "@/components/Modal";
 
 export default function Home({
   searchParams,
@@ -13,7 +12,6 @@ export default function Home({
         <Filters />
         <GoalWrapper searchParams={searchParams} />
       </main>
-      <GameModal />
     </>
   );
 }
