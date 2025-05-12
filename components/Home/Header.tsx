@@ -4,6 +4,7 @@ import Image from "next/image";
 import SearchFilter from "./SearchFilter";
 import { Dropdown } from "./Dropdown";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const searchParams = useSearchParams();
@@ -32,13 +33,13 @@ export default function Header() {
         </h1>
       </div>
       <nav className="flex gap-5 font-medium text-zinc-100">
-        <a href="/">Inicio</a>
+        <Link href="/">Inicio</Link>
         <Dropdown
           selectedOption={selectedOption}
           onChange={handleDropdownChange}
           options={["Todos", "Muy Bajos", "Bajos", "Medios", "Altos"]}
         />
-        <button>Ayuda</button>
+        <Link target="_blank" href="https://discord.gg/VbJcf2Sm9b">Ayuda</Link>
       </nav>
       <div className="flex text-zinc-100">
         <SearchFilter />
