@@ -13,7 +13,7 @@ export async function generateMetadata({ params } : {
     icons: game?.cover_url || "/favicon.ico",
     openGraph: {
       title: game?.title || "Juego no encontrado",
-      description: "Pagina oficial de Wave Repacks, una coleccion de repacks de juegos para PC y consolas.",
+      description: "Pagina oficial de Wave Repacks, descarga tus juegos favoritos gratis.",
       siteName: "Wave Repacks",
       locale: "es-ES",
       type: "website",    

@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   icons: "/favicon.ico",
   openGraph: {
     title: "Wave Repacks",
-    description: "Pagina oficial de Wave Repacks, una coleccion de repacks de juegos para PC y consolas.",
+    description: "Pagina oficial de Wave Repacks, descarga tus juegos favoritos gratis.",
     siteName: "Wave Repacks",
     locale: "es-ES",
     type: "website",    
     images: "/favicon.ico",
   },
-  description: "Pagina oficial de Wave Repacks, una coleccion de repacks de juegos para PC y consolas.",
+  description: "Pagina oficial de Wave Repacks, descarga tus juegos favoritos gratis.",
 };
 
 export default function RootLayout({
