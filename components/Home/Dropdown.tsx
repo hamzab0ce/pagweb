@@ -22,7 +22,7 @@ export const Dropdown = ({ options, onChange }: DropdownProps) => {
         <button>Categorias</button>
         <ChevronDown className={`${isOpen ? "rotate-180" : ""} transition-transform duration-300 ease-in-out`} />
       </div>
-      <ul className={`${isOpen ? "flex" : "hidden"} my-2 gap-2 flex-col py-3 items-start absolute top-full w-40 bg-zinc-900 border border-zinc-800 rounded-lg`}>
+      <ul className={`${isOpen ? "flex" : "hidden"} z-10 my-2 gap-2 flex-col py-3 items-start absolute top-full w-40 bg-zinc-900 border border-zinc-800 rounded-lg`}>
         {options.map((option) => (
           <li
             className="cursor-pointer font-normal hover:bg-zinc-800 w-full px-3"
