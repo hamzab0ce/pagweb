@@ -26,12 +26,12 @@ export default function Header() {
   };
   return (
     <header className="flex justify-between text-center items-center p-4 mx-10">
-      <div className="flex items-center gap-2">
+      <Link href="/" className="flex items-center gap-2">
         <Image src="/favicon.ico" alt="Logo" width={40} height={40} />
         <h1 className="font-inter text-2xl font-bold text-zinc-100 italic">
           Wave Repacks
         </h1>
-      </div>
+      </Link>
       <nav className="flex gap-5 font-medium text-zinc-100">
         <Link href="/">Inicio</Link>
         <Dropdown
