@@ -5,7 +5,7 @@ import { Suspense } from "react";
 export default function Home({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   return (
     <div className="relative h-full min-h-screen w-full bg-[#131316] overflow-hidden">
@@ -14,7 +14,13 @@ export default function Home({
 
       {/* Contenido */}
       <main className="relative z-10 flex items-start py-5 gap-5 m-5 rounded-2xl justify-center">
-        <Suspense fallback={<div className="w-full h-full flex items-center justify-center">Loading...</div>}>
+        <Suspense
+          fallback={
+            <div className="w-full h-full flex items-center justify-center">
+              Loading...
+            </div>
+          }
+        >
           <Filters />
         </Suspense>
         <GoalWrapper searchParams={searchParams} />
