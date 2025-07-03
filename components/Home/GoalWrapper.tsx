@@ -1,12 +1,17 @@
 import { getGames } from "@/app/actions/getGames";
 import GoalList from "./GoalList";
 import { countGames } from "@/app/actions/countGame";
-export default async function GoalWrapper({ searchParams }: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
-  // No necesitas esperar a searchParams, ya que es un objeto
-  const skip = Number(searchParams.page) || 0; 
-  const category = searchParams.category as string || "";
+
+interface PageProps {
+  searchParams: {
+    page?: string | string[];
+    category?: string | string[];
+  };
+}
+
+export default async function GoalWrapper({ searchParams }: PageProps) {
+  const skip = Number(Array.isArray(searchParams.page) ? searchParams.page[0] : searchParams.page) || 0; 
+  const category = Array.isArray(searchParams.category) ? searchParams.category[0] : searchParams.category || "";
   const games = await getGames(skip, category);
   const count = await countGames();
   
@@ -14,3 +19,4 @@ export default async function GoalWrapper({ searchParams }: {
     <GoalList games={games} totalGames={count} />
   );
 }
+
