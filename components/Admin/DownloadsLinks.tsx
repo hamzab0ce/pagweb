@@ -9,17 +9,10 @@ export type LinkInput = {
 
 const providers = [
   { value: "", label: "--Proveedor--" },
-<<<<<<< HEAD
-  { value: "Mega", label: "Mega" },
-  { value: "Mediafire", label: "MediaFire" },
-  { value: "Drive", label: "Google Drive" },
-  { value: "Otro", label: "Otro" },
-=======
   { value: "Mega", label: "Descargar" },
   { value: "Mediafire", label: "Descargar" },
   { value: "Drive", label: "Descargar" },
   { value: "Otro", label: "Descargar" },
->>>>>>> v2
 ];
 
 export default function DownloadLinksCompact({
@@ -85,11 +78,7 @@ export default function DownloadLinksCompact({
         <button
           type="button"
           onClick={add}
-<<<<<<< HEAD
-          className="text-blue-400 text-sm hover:underline"
-=======
           className="text-purple-400 text-sm hover:underline"
->>>>>>> v2
         >
           + Añadir otro
         </button>
