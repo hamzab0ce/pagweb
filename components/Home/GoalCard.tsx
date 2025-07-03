@@ -19,7 +19,7 @@ export default function GoalCard({ game }: { game: GamesWithLinks }) {
         <h2 className="mt-4 absolute bottom-0 bg-linear-to-b font-medium from-transparent to-80% to-black w-full p-2 text-xl text-white">
           {game.title}
         </h2>
-        <span className="absolute bg-zinc-900/40 border border-zinc-600 backdrop-blur rounded-md m-2 font-sans top-0 right-0 p-1 text-white">
+        <span className="absolute bg-purple-500 rounded-md m-2 font-sans top-0 right-0 p-1 text-white">
           {game.platform}
         </span>
       </Link>
