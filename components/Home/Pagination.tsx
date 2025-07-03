@@ -30,7 +30,7 @@ export default function Pagination({ totalPages }: {
       <button
         onClick={handlePrevPage}
         disabled={currentPage === 1}
-        className="px-3 py-1 cursor-pointer bg-zinc-600 rounded-md disabled:opacity-40"
+        className="px-3 py-1 cursor-pointer bg-purple-500 disabled:bg-zinc-600 rounded-md disabled:opacity-40"
       >
         ← Anterior
       </button>
@@ -42,7 +42,7 @@ export default function Pagination({ totalPages }: {
       <button
         onClick={handleNextPage}
         disabled={currentPage === totalPages}
-        className="px-3 py-1 cursor-pointer bg-zinc-600 rounded-md disabled:opacity-40"
+        className="px-3 py-1 cursor-pointer bg-purple-500 disabled:bg-zinc-600 rounded-md disabled:opacity-40"
       >
         Siguiente →
       </button>

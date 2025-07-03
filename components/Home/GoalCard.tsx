@@ -1,13 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 import type { GamesWithLinks } from "@/app/actions/getGames";
 import Link from "next/link";
 
 export default function GoalCard({ game }: { game: GamesWithLinks }) {
   const slug = game.title.toLowerCase().replace(" ", "-");
   return (
-    <li
-      className="max-w-2xs cursor-pointer relative overflow-hidden"
-    >
-      <Link href={`/game/${slug}-descargar-gratis/${game.id}`} className="flex flex-col items-center justify-center rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+    <li className="max-w-2xs cursor-pointer relative overflow-hidden">
+      <Link
+        prefetch
+        href={`/game/${slug}-descargar-gratis/${game.id}`}
+        className="flex flex-col items-center justify-center rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
+      >
         <img
           src={game.cover_url}
           alt={game.title}
