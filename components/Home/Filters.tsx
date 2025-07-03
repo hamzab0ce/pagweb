@@ -20,7 +20,11 @@ export default function Filters() {
           className="hidden"
           checked={selected === platform}
         />
+<<<<<<< HEAD
         <div className="w-2 h-2 rounded-xs group-has-checked:bg-blue-700 outline-3 outline-offset-2 outline-blue-700"></div>
+=======
+        <div className="w-2 h-2 rounded-xs group-has-checked:bg-purple-400 outline-3 outline-offset-2 outline-purple-400"></div>
+>>>>>>> v2
         <span className="text-sm font-semibold">{platform}</span>
       </label>
     );

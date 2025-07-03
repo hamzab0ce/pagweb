@@ -15,17 +15,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Wave Repacks",
+  title: "BitZone",
   icons: "/favicon.ico",
   openGraph: {
-    title: "Wave Repacks",
-    description: "Pagina oficial de Wave Repacks, descarga tus juegos favoritos gratis.",
-    siteName: "Wave Repacks",
+    title: "BitZone",
+    description: "Pagina oficial de BitZone, descarga tus juegos favoritos gratis.",
+    siteName: "BitZone",
     locale: "es-ES",
     type: "website",    
     images: "/favicon.ico",
   },
-  description: "Pagina oficial de Wave Repacks, descarga tus juegos favoritos gratis.",
+  description: "Pagina oficial de BitZone, descarga tus juegos favoritos gratis.",
 };
 
 export default function RootLayout({

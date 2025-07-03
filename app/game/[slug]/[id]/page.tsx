@@ -13,8 +13,13 @@ export async function generateMetadata({ params } : {
     icons: "/favicon.ico",
     openGraph: {
       title: game?.title || "Juego no encontrado",
+<<<<<<< HEAD
       description: "Pagina oficial de Wave Repacks, descarga tus juegos favoritos gratis.",
       siteName: "Wave Repacks",
+=======
+      description: "Pagina oficial de BitZone, descarga tus juegos favoritos gratis.",
+      siteName: "BitZone",
+>>>>>>> v2
       locale: "es-ES",
       type: "website",    
       images: "/favicon.ico",
