@@ -1,11 +1,10 @@
 import Filters from "@/components/Home/Filters";
 import GoalWrapper from "@/components/Home/GoalWrapper";
-import { Suspense } from "react";
 
 export default function Home({
   searchParams,
 }: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  searchParams: { [key: string]: string | string[] | undefined };
 }) {
   return (
     <div className="relative h-full min-h-screen w-full bg-[#131316] overflow-hidden">
@@ -15,9 +14,7 @@ export default function Home({
       {/* Contenido */}
       <main className="relative z-10 flex items-start py-5 gap-5 m-5 rounded-2xl justify-center">
         <Filters />
-        <Suspense fallback={<div>Cargando...</div>}>
-          <GoalWrapper searchParams={searchParams} />
-        </Suspense>
+        <GoalWrapper searchParams={searchParams} />
       </main>
     </div>
   );
