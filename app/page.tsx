@@ -1,5 +1,6 @@
 import Filters from "@/components/Home/Filters";
 import GoalWrapper from "@/components/Home/GoalWrapper";
+import { Suspense } from "react";
 
 export default function Home({
   searchParams,
@@ -14,7 +15,9 @@ export default function Home({
       {/* Contenido */}
       <main className="relative z-10 flex items-start py-5 gap-5 m-5 rounded-2xl justify-center">
         <Filters />
-        <GoalWrapper searchParams={searchParams} />
+        <Suspense fallback={<div>Cargando...</div>}>
+          <GoalWrapper searchParams={searchParams} />
+        </Suspense>
       </main>
     </div>
   );
