@@ -30,7 +30,7 @@ export default function Select({ name, options, handleChange, selectedOption }: 
   ));
 
   return (
-    <div className="relative z-10 group h-full">
+    <div className="relative z-20 group">
       <h2 className="mb-2">{name}</h2>
       <label>
         <div className="border cursor-pointer border-zinc-800 rounded flex justify-between flex-wrap items-center gap-2 p-1">

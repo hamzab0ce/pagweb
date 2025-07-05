@@ -16,7 +16,7 @@ export default function DownloadLinkList({
             target="_blank"
             className="text-zinc-100 flex-1 min-w-1/3 text-center bg-purple-500 p-2 rounded-md mt-5 block"
           >
-            {link.provider}
+            Descargar - {link.provider}
           </a>
         ))}
       </ul>

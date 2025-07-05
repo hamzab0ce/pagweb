@@ -11,14 +11,10 @@ datasource db {
 model games {
   id             Int              @id @default(autoincrement())
   title          String           @db.VarChar(100)
-  requeriments   String?          @db.VarChar(100)
+  requeriments   String           @db.VarChar(100)
   cover_url      String
-  password       String?
-  platform       String?          @db.VarChar(50)
-  game_size      String?          @db.VarChar(50)
-  serial         String?
-  version        String?
-  language       String?
+  content        String
+  platform       String           @db.VarChar
   games_genres   games_genres[]
   links_descarga links_descarga[]
 }

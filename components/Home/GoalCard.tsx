@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function GoalCard({ game }: { game: GamesWithLinks }) {
   const slug = game.title.toLowerCase().replace(" ", "-");
   return (
-    <li className="max-w-2xs cursor-pointer relative overflow-hidden">
+    <li className="max-w-2xs cursor-pointer shadow-lg relative">
       <Link
         prefetch
         href={`/game/${slug}-descargar-gratis/${game.id}`}
@@ -19,7 +19,7 @@ export default function GoalCard({ game }: { game: GamesWithLinks }) {
         <h2 className="mt-4 absolute bottom-0 bg-linear-to-b font-medium from-transparent to-80% to-black w-full p-2 text-xl text-white">
           {game.title}
         </h2>
-        <span className="absolute bg-purple-500 rounded-md m-2 font-sans top-0 right-0 p-1 text-white">
+        <span className="absolute text-xs font-semibold bg-linear-to-b from-purple-500 to-purple-900 rounded-t font-sans bottom-full right-0 p-0.5 px-2 text-white">
           {game.platform}
         </span>
       </Link>

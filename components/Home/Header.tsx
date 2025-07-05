@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="flex justify-between text-center items-center p-4 mx-10">
+    <header className="flex fixed top-0 left-0 right-0 z-10 bg-zinc-900 justify-between text-center items-center p-4">
       <Link href="/" className="flex items-center gap-2">
         <Image src="/favicon.ico" alt="Logo" width={40} height={40} />
         <h1 className="font-inter text-2xl font-bold text-zinc-100">

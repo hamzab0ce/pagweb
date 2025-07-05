@@ -26,8 +26,8 @@ export default async function Login(state: LoginFormState, formData: FormData) {
     return {
       error: "El usuario o la contraseña son incorrectos",
     };
-  }
-  const accessToken = await generateAccessToken({ username: fields.username });
+  }  
+  const accessToken = await generateAccessToken({ username: fields.username });  
   const cookieStore = await cookies();
   cookieStore.set("access_token", accessToken, {
     httpOnly: true,

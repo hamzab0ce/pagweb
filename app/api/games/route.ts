@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { createGameSchema } from "@/lib/validators/game";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
@@ -23,30 +23,15 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const {
-      title,
-      version,
-      cover_url,
-      password,
-      serial,
-      requeriments,
-      game_size,
-      platform,
-      language,
-      download_links,
-    } = parsed.data;
+    const { title, cover_url, download_links, requeriments, description, platform } = parsed.data;
 
-    const game = await prisma.games.create({
+    await prisma.games.create({
       data: {
-        title,
-        version,
-        cover_url,
-        password,
-        serial,
-        requeriments,
-        game_size,
         platform,
-        language,
+        title,
+        requeriments,
+        cover_url,
+        content: description,
         links_descarga: {
           createMany: { data: download_links },
         },
@@ -62,12 +47,10 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    return NextResponse.json({ error: null, data: game });
-  } catch (e : any) {
-    console.error("ERROR en createGame:", e);
-    return NextResponse.json(
-      { error: [e.message || "Error interno del servidor"], data: null },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: null });
+  } catch (e: unknown) {
+    const message =
+      e instanceof Error ? e.message : "Error interno del servidor";
+    return NextResponse.json({ error: [message], data: null }, { status: 500 });
   }
 }
