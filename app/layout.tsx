@@ -15,25 +15,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BitZone",
+  title: "Games Hub",
   icons: "/favicon.ico",
   openGraph: {
-    title: "BitZone",
-    description: "Pagina oficial de BitZone, descarga tus juegos favoritos gratis.",
-    siteName: "BitZone",
+    title: "Games Hub",
+    description: "Pagina oficial de Games Hub, descarga tus juegos favoritos gratis.",
+    siteName: "Games Hub",
     locale: "es-ES",
     type: "website",    
     images: "/favicon.ico",
   },
-  description: "Pagina oficial de BitZone, descarga tus juegos favoritos gratis.",
+  description: "Pagina oficial de Games Hub, descarga tus juegos favoritos gratis.",
 };
 
 export default function RootLayout({
   children,
-  modal
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html lang="es">
@@ -44,7 +42,6 @@ export default function RootLayout({
           <Header />
         </Suspense>
         {children}
-        {modal}
       </body>
     </html>
   );

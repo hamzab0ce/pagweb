@@ -8,7 +8,7 @@ export default function Header() {
       <Link href="/" className="flex items-center gap-2">
         <Image src="/favicon.ico" alt="Logo" width={40} height={40} />
         <h1 className="font-inter text-2xl font-bold text-zinc-100">
-          BitZone
+          Games Hub
         </h1>
       </Link>
       <div className="flex gap-5 text-zinc-100">

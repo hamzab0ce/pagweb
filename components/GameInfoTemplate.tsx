@@ -9,12 +9,7 @@ import DownloadLinkList from "./DownLoadLinkList";
 import GenreBadge from "./GenreBadge";
 import Image from "next/image";
 import { motion } from "motion/react";
-
-const animations = {
-  initial: { opacity: 0, scale: 0 },
-  animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0 },
-};
+import { ChevronLeft } from "lucide-react";
 
 export default function GameTemplate({ game }: { game: GamesWithLinks }) {
   const router = useRouter();
@@ -25,18 +20,17 @@ export default function GameTemplate({ game }: { game: GamesWithLinks }) {
   return (
     <motion.div
       className="rounded-lg border border-zinc-800 w-full shadow-lg relative flex flex-col bg-zinc-900 outline-none focus:outline-none"
-      {...animations}
     >
-      <div className="flex items-center justify-between p-5 border-b border-solid border-zinc-800 rounded-t">
-        <h3 className="text-3xl w-full font-semibold text-zinc-100">
-          {game.title}
-        </h3>
+      <div className="flex items-center p-5 border-b border-solid border-zinc-800 rounded-t">
         <button
           className="p-1 ml-auto cursor-pointer bg-transparent border-0 text-zinc-300 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
           onClick={handleCloseModal}
         >
-          ×
+          <ChevronLeft className="w-6 font-bold h-6" />
         </button>
+        <h3 className="text-3xl w-full font-semibold text-zinc-100">
+          {game.title}
+        </h3>
       </div>
       <div className="p-5 flex-auto">
         <GenreBadge genres={game.games_genres} />
