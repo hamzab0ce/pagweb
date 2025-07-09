@@ -15,6 +15,7 @@ model games {
   cover_url      String
   content        String
   platform       String           @db.VarChar
+  views          Int?
   games_genres   games_genres[]
   links_descarga links_descarga[]
 }

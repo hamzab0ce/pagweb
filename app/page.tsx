@@ -1,5 +1,5 @@
-import Filters from "@/components/Home/Filters";
-import GoalWrapper from "@/components/Home/GoalWrapper";
+import Filters from "@/components/Home/Filters/Filters";
+import GameCollectionWrapper from "@/components/Home/Game/GameCollectionWrapper";
 import { Suspense } from "react";
 
 export default function Home({
@@ -8,10 +8,9 @@ export default function Home({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   return (
-    <div className="relative pt-20 min-h-dvh w-full overflow-hidden">
-
+    <div className="relative min-h-dvh w-full overflow-hidden">
       {/* Contenido */}
-      <main className="relative z-10 flex items-start gap-5 m-5 rounded-2xl justify-center">
+      <main className=" z-10 flex items-stretch md:gap-5 gap-1 m-5 rounded-2xl justify-center">
         <Suspense
           fallback={
             <div className="w-full h-full flex items-center justify-center">
@@ -21,9 +20,8 @@ export default function Home({
         >
           <Filters />
         </Suspense>
-        <GoalWrapper searchParams={searchParams} />
+        <GameCollectionWrapper searchParams={searchParams} />
       </main>
     </div>
   );
 }
-

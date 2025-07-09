@@ -1,22 +1,43 @@
+"use client";
+import { MenuIcon } from "lucide-react";
 import Image from "next/image";
-import SearchFilter from "./SearchFilter";
 import Link from "next/link";
+import { useState } from "react";
+import SearchFilter from "./SearchFilter";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <header className="flex fixed top-0 left-0 right-0 z-10 bg-zinc-900 justify-between text-center items-center p-4">
+    <header className="flex relative top-0 left-0 right-0 z-30 bg-surface border-b border-border justify-between text-center items-center p-4">
       <Link href="/" className="flex items-center gap-2">
-        <Image src="/favicon.ico" alt="Logo" width={40} height={40} />
-        <h1 className="font-inter text-2xl font-bold text-zinc-100">
+        <Image
+          src="/favicon.ico"
+          className="rounded"
+          alt="Logo"
+          width={40}
+          height={40}
+        />
+        <h1 className="font-inter md:block hidden text-2xl font-bold text-cyan-600">
           Games Hub
         </h1>
       </Link>
-      <div className="flex gap-5 text-zinc-100">
-      <nav className="flex gap-5 items-center font-medium text-zinc-100">
-        <Link href="/">Inicio</Link>
-
-        <Link target="_blank" href="https://discord.gg/VbJcf2Sm9b">Ayuda</Link>
-      </nav>
+      <button className="cursor-pointer md:hidden" onClick={toggleMenu}>
+        <MenuIcon className="block" />
+      </button>
+      <div
+        className={`flex md:h-auto md:w-auto items-center w-full md:flex-row md:static duration-300 justify-end flex-col-reverse ${
+          isOpen ? "right-0" : "-right-full"
+        } h-screen absolute bg-surface/40 backdrop-blur-md p-2 top-full gap-5 text-primary`}
+      >
+        <nav className="flex flex-col md:flex-row gap-5 items-center font-medium">
+          <Link href="/">Inicio</Link>
+          <Link target="_blank" href="https://discord.gg/VbJcf2Sm9b">
+            Ayuda
+          </Link>
+        </nav>
         <SearchFilter />
       </div>
     </header>

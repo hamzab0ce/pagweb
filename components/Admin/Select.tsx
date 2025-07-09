@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import CheckBoxCustomized from "../CheckBoxCustomized";
+import CheckBoxCustomized from "../Home/Filters/CheckBoxCustomized";
 
 export default function Select({ name, options, handleChange, selectedOption }: {
   name: string

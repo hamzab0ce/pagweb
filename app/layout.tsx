@@ -34,9 +34,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className="bg-black">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans text-zinc-100 antialiased min-h-screen flex flex-col bg-zinc-900/80 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]`}
+        className={`dark ${geistSans.variable}  ${geistMono.variable} overflow-x-hidden font-sans text-zinc-100 antialiased min-h-screen flex flex-col bg-background bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:20px_20px]`}
       >
         <Suspense fallback={null}>
           <Header />

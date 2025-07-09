@@ -1,5 +1,6 @@
+import { addView } from "@/app/actions/AddView";
 import { getGameByID } from "@/app/actions/getGameByID";
-import GameTemplate from "@/components/GameInfoTemplate";
+import GameTemplate from "@/components/Game/GameInfoTemplate";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -9,12 +10,13 @@ export async function generateMetadata({ params } : {
   const { id } = await params;
   const game = await getGameByID(Number(id));
   return {
+    metadataBase: new URL("https://g4meshub.vercel.app/"),
     title: game?.title || "Juego no encontrado",
     icons: "/favicon.ico",
     openGraph: {
       title: game?.title || "Juego no encontrado",
-      description: "Pagina oficial de BitZone, descarga tus juegos favoritos gratis.",
-      siteName: "BitZone",
+      description: "Pagina oficial de Games Hub, descarga tus juegos favoritos gratis.",
+      siteName: "Games Hub",
       locale: "es-ES",
       type: "website",    
       images: "/favicon.ico",
@@ -29,6 +31,7 @@ export default async function Page({
 }) {
   const { id } = await params;
   const game = await getGameByID(Number(id));
+  await addView(Number(id));
   return (
     <>
       {game && (

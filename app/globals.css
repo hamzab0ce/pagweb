@@ -1,20 +1,31 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-html {
-  background-color: black;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-@layer {
-  *:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
+:root {
+  --font-geist-sans: "Geist Sans", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+  --color-border: #aeaeae;
+  --color-text: #000000;
+  --color-background: #c5c5c5;
+  --color-surface: #e0e0e0;
+
+  :where(.dark) {
+    --color-text: #ffffff;
+    --color-border: #2a2627;
+    --color-background: #18181b;
+    --color-surface: #000000;
   }
 }
 
 @theme inline {
+  --color-primary: var(--color-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-border: var(--color-border);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
 }
 
 @layer utilities {

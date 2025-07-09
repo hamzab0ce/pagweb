@@ -26,23 +26,23 @@ export default function Pagination({ totalPages }: {
   };
 
   return (
-    <div className="flex gap-2 items-center justify-center mt-4">
+    <div className="flex gap-2 items-end flex-1 justify-center">
       <button
         onClick={handlePrevPage}
         disabled={currentPage === 1}
-        className="px-3 py-1 cursor-pointer bg-purple-500 disabled:bg-zinc-600 rounded-md disabled:opacity-40"
+        className="px-3 py-1 cursor-pointer bg-amber-500 disabled:bg-zinc-700 rounded-md disabled:opacity-40"
       >
         ← Anterior
       </button>
 
-      <span className="text-sm text-zinc-400">
+      <span className="text-sm py-1 text-zinc-400">
         Página <strong>{currentPage}</strong> de <strong>{totalPages}</strong>
       </span>
 
       <button
         onClick={handleNextPage}
         disabled={currentPage === totalPages}
-        className="px-3 py-1 cursor-pointer bg-purple-500 disabled:bg-zinc-600 rounded-md disabled:opacity-40"
+        className="px-3 py-1 cursor-pointer bg-amber-500 disabled:bg-zinc-700 rounded-md disabled:opacity-40"
       >
         Siguiente →
       </button>

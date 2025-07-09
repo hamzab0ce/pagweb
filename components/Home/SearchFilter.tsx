@@ -10,7 +10,7 @@ export default function SearchFilter() {
     setSearchQuery(e.target.value)
   };
   return (
-    <label htmlFor="search" className="w-96 border border-zinc-800 bg-zinc-800/50 flex rounded-xl p-2">
+    <label htmlFor="search" className="w-96 border border-border bg-background flex rounded-xl p-2">
       <input
         type="text"
         id="search"
@@ -18,9 +18,9 @@ export default function SearchFilter() {
         value={search}
         onChange={(e) => handleSearch(e)}
         placeholder="¿Que estas buscando?"
-        className="px-2 w-full focus:outline-0 font-light text-sm text-zinc-50"
+        className="px-2 w-full focus:outline-0 font-light text-sm text-primary"
       />
-      <SearchIcon className="w-5 h-5 text-zinc-700" />
+      <SearchIcon className="w-5 h-5" />
     </label>
   );
 }
