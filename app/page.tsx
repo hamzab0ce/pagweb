@@ -8,9 +8,7 @@ export default function Home({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   return (
-    <div className="relative min-h-dvh w-full overflow-hidden">
-      {/* Contenido */}
-      <main className=" z-10 flex items-stretch md:gap-5 gap-1 m-5 rounded-2xl justify-center">
+      <main className="z-10 flex items-stretch md:gap-5 gap-1 m-5 rounded-2xl justify-center">
         <Suspense
           fallback={
             <div className="w-full h-full flex items-center justify-center">
@@ -22,6 +20,5 @@ export default function Home({
         </Suspense>
         <GameCollectionWrapper searchParams={searchParams} />
       </main>
-    </div>
   );
 }

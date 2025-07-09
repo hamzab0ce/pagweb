@@ -39,7 +39,7 @@ export default function Filters() {
       <div
         className={`md:flex md:static md:w-full md:mx-0 duration-300 z-20 mx-2 fixed ${
           isOpen ? "left-0" : "-left-full"
-        } w-1/2 flex-col bg-surface border border-border p-5 rounded-2xl`}
+        } w-1/3 flex-col bg-surface border border-border p-5 rounded-2xl`}
       >
         <div className="flex justify-between items-center">
           <h2 className="text-primary font-semibold">Filtrar por:</h2>

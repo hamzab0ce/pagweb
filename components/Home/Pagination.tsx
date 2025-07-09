@@ -35,7 +35,7 @@ export default function Pagination({ totalPages }: {
         ← Anterior
       </button>
 
-      <span className="text-sm py-1 text-zinc-400">
+      <span className="text-sm md:block hidden py-1 text-zinc-400">
         Página <strong>{currentPage}</strong> de <strong>{totalPages}</strong>
       </span>
 

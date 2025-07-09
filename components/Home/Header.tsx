@@ -11,7 +11,7 @@ export default function Header() {
     setIsOpen(!isOpen);
   };
   return (
-    <header className="flex relative top-0 left-0 right-0 z-30 bg-surface border-b border-border justify-between text-center items-center p-4">
+    <header className="flex relative z-30 bg-surface border-b border-border justify-between text-center items-center p-4">
       <Link href="/" className="flex items-center gap-2">
         <Image
           src="/favicon.ico"
@@ -28,9 +28,9 @@ export default function Header() {
         <MenuIcon className="block" />
       </button>
       <div
-        className={`flex md:h-auto md:w-auto items-center w-full md:flex-row md:static duration-300 justify-end flex-col-reverse ${
-          isOpen ? "right-0" : "-right-full"
-        } h-screen absolute bg-surface/40 backdrop-blur-md p-2 top-full gap-5 text-primary`}
+        className={`flex md:h-auto md:w-auto items-center md:flex-row md:static duration-300 justify-end flex-col-reverse ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } absolute bg-surface/40 right-0 left-0 bottom-0 top-full h-screen backdrop-blur-md p-2 gap-5 text-primary`}
       >
         <nav className="flex flex-col md:flex-row gap-5 items-center font-medium">
           <Link href="/">Inicio</Link>
