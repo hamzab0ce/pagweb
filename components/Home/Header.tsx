@@ -28,7 +28,7 @@ export default function Header() {
         <MenuIcon className="block" />
       </button>
       <div
-        className={`flex md:h-auto md:w-auto items-center md:flex-row md:static duration-300 justify-end flex-col-reverse ${
+        className={`flex md:h-auto md:w-auto md:translate-x-0 items-center md:flex-row md:static duration-300 justify-end flex-col-reverse ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } absolute bg-surface/40 right-0 left-0 bottom-0 top-full h-screen backdrop-blur-md p-2 gap-5 text-primary`}
       >
