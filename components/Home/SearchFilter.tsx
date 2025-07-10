@@ -10,7 +10,7 @@ export default function SearchFilter() {
     setSearchQuery(e.target.value)
   };
   return (
-    <label htmlFor="search" className="w-96 border border-border bg-background flex rounded-xl p-2">
+    <label htmlFor="search" className="w-96 border border-border bg-surface/10 flex rounded-xl p-2">
       <input
         type="text"
         id="search"

@@ -26,8 +26,8 @@ export default function GameCollection({
   }, [games, activePlatforms, search]);
 
   return (
-    <section className="flex justify-start w-full flex-col p-5 bg-surface border border-border rounded-2xl">
-      <ul className="flex w-full flex-wrap gap-5 my-5">
+    <section className="flex justify-start w-full flex-col p-5 bg-surface/10 border border-border rounded-2xl">
+      <ul className="flex w-full flex-wrap gap-5 gap-y-8 my-5">
         {filteredGames.map((game) => {
           return <GameCard key={game.id} game={game} />;
         })}

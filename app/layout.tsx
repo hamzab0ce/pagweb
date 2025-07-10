@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Home/Header";
 import { Suspense } from "react";
+import Image from "next/image";
+import backgroundImage from "../assets/img/background.png";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserratSans = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
@@ -19,13 +16,15 @@ export const metadata: Metadata = {
   icons: "/favicon.ico",
   openGraph: {
     title: "Games Hub",
-    description: "Pagina oficial de Games Hub, descarga tus juegos favoritos gratis.",
+    description:
+      "Pagina oficial de Games Hub, descarga tus juegos favoritos gratis.",
     siteName: "Games Hub",
     locale: "es-ES",
-    type: "website",    
+    type: "website",
     images: "/favicon.ico",
   },
-  description: "Pagina oficial de Games Hub, descarga tus juegos favoritos gratis.",
+  description:
+    "Pagina oficial de Games Hub, descarga tus juegos favoritos gratis.",
 };
 
 export default function RootLayout({
@@ -34,14 +33,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="bg-black overflow-hidden">
+    <html lang="es">
       <body
-        className={`dark ${geistSans.variable} ${geistMono.variable} min-h-screen font-sans text-zinc-100 antialiased flex flex-col bg-background bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:20px_20px]`}
+        className={`dark ${montserratSans.variable} min-h-screen w-full font-sans text-zinc-100 antialiased flex flex-col`}
       >
-        <Suspense fallback={null}>
-          <Header />
-        </Suspense>
-        {children}
+        {/* Imagen de fondo */}
+        <div className="fixed inset-0 -z-20">
+          <Image
+            src={backgroundImage.src}
+            alt="Background"
+            width={1920}
+            height={1080}
+            className="w-full h-full"
+            priority
+          />
+        </div>
+
+        {/* Overlay con backdrop-blur */}
+        <div className="fixed inset-0 backdrop-blur-3xl bg-amber-950/20 -z-10"></div>
+
+        <section className="flex flex-col min-h-screen mx-5 md:mx-20">
+          <Suspense fallback={null}>
+            <Header />
+          </Suspense>
+          {children}
+        </section>
       </body>
     </html>
   );

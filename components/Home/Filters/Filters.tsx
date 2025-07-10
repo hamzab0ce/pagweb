@@ -1,7 +1,7 @@
 "use client";
 import { platforms, requeriments } from "@/const/filtersConst";
 import { useFilters } from "@/hooks/useFilters";
-import { ChevronRight, X } from "lucide-react";
+import { Check, Filter, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Filters() {
@@ -27,42 +27,48 @@ export default function Filters() {
             className="hidden"
             checked={selected === value || selectedOption === value}
           />
-          <div className="w-2 h-2 rounded-xs group-has-checked:bg-amber-400 outline-3 outline-offset-2 outline-amber-400"></div>
-          <span className="text-sm text-primary font-semibold">{value}</span>
+          <div className="w-4 h-4 place-content-center rounded-sm group-has-checked:bg-amber-400 bg-surface/10 outline-1 outline-border">
+            <Check
+              strokeWidth={4}
+              className="w-3 h-3 m-auto text-amber-700 hidden group-has-checked:block"
+            />
+          </div>
+          <span className="text-sm text-secundary font-medium">{value}</span>
         </label>
       );
     });
 
   return (
-    <div className={`flex md:w-1/5 duration-300 flex-row gap-2 z-20`}>
+    <div className={`flex sticky top-1 md:w-1/4 duration-300 flex-row gap-2 z-20`}>
       <div className={`bg-surface/20 backdrop-blur-xs ${isOpen ? "block" : "hidden"} absolute top-0 left-0 right-0 bottom-0`}></div>
       <div
         className={`md:flex md:static md:w-full md:mx-0 duration-300 z-20 mx-2 fixed ${
           isOpen ? "left-0" : "-left-full"
-        } w-1/3 flex-col bg-surface border border-border p-5 rounded-2xl`}
+        } w-2/3 flex-col md:bg-surface/10 backdrop-blur-2xl md:backdrop-blur-none border border-border p-2 py-5 rounded-2xl`}
       >
-        <div className="flex justify-between items-center">
-          <h2 className="text-primary font-semibold">Filtrar por:</h2>
-          <button onClick={toggleMenu} className="md:hidden text-zinc-500 cursor-pointer">
+        <div className="absolute top-2 right-2">
+          <button onClick={toggleMenu} className="md:hidden text-amber-400 cursor-pointer">
             <X size={20} />
           </button>
         </div>
-        <div className="flex ml-4 gap-5 my-5 flex-col text-zinc-100">
-          <span className="text-zinc-500 text-sm font-bold">Plataformas</span>
-          {renderCheckbox("platform", platforms, handleChange)}
-        </div>
-        <div className="flex ml-4 gap-5 my-5 flex-col text-zinc-100">
-          <span className="text-zinc-500 text-sm font-bold">
-            Requerimientos
-          </span>
-          {renderCheckbox("requeriments", requeriments, handleCategory)}
+        <div className="flex flex-col gap-5">
+          <div className="flex ml-4 gap-5 flex-col text-zinc-100">
+            <span className="text-primary text-sm font-bold">Plataformas</span>
+            {renderCheckbox("platform", platforms, handleChange)}
+          </div>
+          <div className="flex ml-4 gap-5 flex-col text-zinc-100">
+            <span className="text-primary text-sm font-bold">
+              Requerimientos
+            </span>
+            {renderCheckbox("requeriments", requeriments, handleCategory)}
+          </div>
         </div>
       </div>
       <button
         onClick={toggleMenu}
-        className="md:hidden px-2 bg-surface border border-border rounded-2xl flex cursor-pointer items-center gap-2"
+        className="md:hidden bottom-5 left-5 fixed p-2 bg-surface/15 backdrop-blur-2xl border border-border rounded-2xl flex cursor-pointer items-center"
       >
-        <ChevronRight />
+        <Filter strokeWidth={2} className="w-4 h-4 text-amber-400" />
       </button>
     </div>
   );
