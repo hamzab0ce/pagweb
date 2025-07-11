@@ -1,10 +1,11 @@
+import Header from "@/components/Home/Header";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Home/Header";
-import { Suspense } from "react";
 import Image from "next/image";
+import { Suspense } from "react";
+import { Toaster } from "react-hot-toast";
 import backgroundImage from "../assets/img/background.png";
+import "./globals.css";
 
 const montserratSans = Montserrat({
   variable: "--font-montserrat",
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body
         className={`dark ${montserratSans.variable} min-h-screen w-full font-sans text-zinc-100 antialiased flex flex-col`}
       >
+        <Toaster />
         {/* Imagen de fondo */}
         <div className="fixed inset-0 -z-20">
           <Image

@@ -6,7 +6,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
-import rehypeSanitize from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
 import DownloadLinkList from "./DownLoadLinkList";
 import GenreBadge from "./GenreBadge";
@@ -45,10 +44,10 @@ export default function GameTemplate({ game }: { game: GamesWithLinks }) {
               src={game.cover_url}
               alt={game.title}
               className=""
-            />
+          />
           <div className="prose prose-invert">
             <Markdown
-              rehypePlugins={[rehypeRaw, rehypeSanitize]}
+              rehypePlugins={[rehypeRaw]}
               remarkPlugins={[remarkGfm]}
             >
               {game.content}

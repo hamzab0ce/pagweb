@@ -7,6 +7,7 @@ import DownloadLinksForm, { LinkInput } from "./DownloadsLinks";
 import Input from "./Input";
 import Select from "./Select";
 import rehypeSanitize from "rehype-sanitize";
+import toast from "react-hot-toast";
 
 export type FormStateError = {
   title?: string[];
@@ -49,6 +50,12 @@ export default function NewGameForm() {
     });
     const result = await response.json();
     setFormState(result);
+    if (response.ok) {
+      toast.success("Juego creado correctamente");
+    }
+    if (result.error) {
+      toast.error("Error al crear el juego");
+    }
   };
 
   return (
