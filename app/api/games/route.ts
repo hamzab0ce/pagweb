@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
       data: {
         platform,
         title,
-        requeriments,
+        requeriments: platform === "PS2" ? null : requeriments,
         cover_url,
         content: description,
         links_descarga: {
@@ -49,6 +49,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ error: null });
   } catch (e: unknown) {
+    console.log(e);
+    
     const message =
       e instanceof Error ? e.message : "Error interno del servidor";
     return NextResponse.json({ error: [message], data: null }, { status: 500 });

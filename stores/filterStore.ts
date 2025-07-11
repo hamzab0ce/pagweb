@@ -9,7 +9,7 @@ interface StoreState {
 
 export const useSearchStore = create<StoreState>((set) => ({
   searchQuery: "",
-  selectedPlatforms: "All",
+  selectedPlatforms: "Todas",
   setSearchQuery: (query) => set({ searchQuery: query }),
   setSelectedPlatforms: (platform) => set({ selectedPlatforms: platform }),
 }));

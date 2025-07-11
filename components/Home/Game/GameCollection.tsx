@@ -20,7 +20,7 @@ export default function GameCollection({
     return games.filter((game) => {
       return (
         game.title.toLowerCase().includes(search.toLowerCase()) &&
-        (activePlatforms === "All" || game.platform === activePlatforms)
+        (activePlatforms === "Todas" || game.platform === activePlatforms)
       );
     });
   }, [games, activePlatforms, search]);

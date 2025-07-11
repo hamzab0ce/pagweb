@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import rehypeSanitize from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
 import DownloadLinksForm, { LinkInput } from "./DownloadsLinks";
 import Input from "./Input";
 import Select from "./Select";
-import rehypeSanitize from "rehype-sanitize";
-import toast from "react-hot-toast";
 
 export type FormStateError = {
   title?: string[];
@@ -41,7 +41,9 @@ export default function NewGameForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    formData.append("requeriments", requeriments[0]);
+    if (platform[0] !== "PS2") {
+      formData.append("requeriments", requeriments[0]);
+    }
     formData.append("download_links", JSON.stringify(downloadLinks));
     formData.append("platform", platform[0]);
     const response = await fetch("/api/games", {
@@ -72,29 +74,31 @@ export default function NewGameForm() {
             placeholder="Minecraft, GTA, etc"
           />
             <Select
-              name="Requisitos"
-              selectedOption={requeriments}
-              options={["Muy Bajos", "Bajos", "Medios", "Altos"]}
-              handleChange={handleRequerimentsChange}
+              name="Plataformas"
+              selectedOption={platform}
+              options={["PC", "Android", "PS2"]}
+              handleChange={handlePlatformChange}
             />
           <Input
             type="text"
             name="cover_url"
             label="Imagen (URL)"
             placeholder="https://..."
-          />
+            />
           <Input
             type="text"
             name="genres"
             label="Generos (separados por comas)"
             placeholder="Acción, Aventura, etc"
-          />
-          <Select
-            name="Plataformas"
-            selectedOption={platform}
-            options={["PC", "Android", "PS2"]}
-            handleChange={handlePlatformChange}
-          />
+            />
+            {platform[0] !== "PS2" && (
+              <Select
+                name="Requisitos"
+                selectedOption={requeriments}
+                options={["Bajos", "Medios", "Altos"]}
+                handleChange={handleRequerimentsChange}
+              />
+            )}
           <DownloadLinksForm onChange={setDownloadLinks} />
           <textarea
             rows={40}
