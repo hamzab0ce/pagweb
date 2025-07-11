@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import { Suspense } from "react";
+import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "react-hot-toast";
 import backgroundImage from "../assets/img/background.png";
 import "./globals.css";
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body
         className={`dark ${montserratSans.variable} min-h-screen w-full font-sans text-zinc-100 antialiased flex flex-col`}
       >
+        <Analytics />
         <Toaster />
         {/* Imagen de fondo */}
         <div className="fixed inset-0 -z-20">
