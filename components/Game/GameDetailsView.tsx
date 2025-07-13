@@ -7,18 +7,17 @@ import { useRouter } from "next/navigation";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
-import DownloadLinkList from "./DownLoadLinkList";
 import GenreBadge from "./GenreBadge";
 
-export default function GameTemplate({ game }: { game: GamesWithLinks }) {
+export default function GameDetailsView({ game }: { game: GamesWithLinks }) {
   const router = useRouter();
   const handleCloseModal = () => {
     router.back();
   };
 
   return (
-    <motion.div className="rounded-lg border border-zinc-800 w-full shadow-lg relative flex flex-col bg-zinc-900 outline-none focus:outline-none">
-      <div className="flex items-center p-5 border-b border-solid border-zinc-800 rounded-t">
+    <motion.div className="w-full md:w-3/4 flex gap-2 items-start flex-col bg-zinc-900 border border-zinc-800 rounded-lg shadow-lg">
+      <div className="flex items-center p-5 border-b w-full  border-solid border-zinc-800 rounded-t">
         <button
           className="p-1 ml-auto cursor-pointer bg-transparent border-0 text-zinc-300 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
           onClick={handleCloseModal}
@@ -37,24 +36,18 @@ export default function GameTemplate({ game }: { game: GamesWithLinks }) {
       <div className="p-5 flex-auto">
         <GenreBadge genres={game.games_genres} />
         <div className="flex flex-col items-center md:items-start md:flex-row gap-5">
-            <Image
-              width={250}
-              height={100}
-              priority
-              src={game.cover_url}
-              alt={game.title}
-              className=""
+          <Image
+            width={250}
+            height={100}
+            priority
+            src={game.cover_url}
+            alt={game.title}
+            className=""
           />
           <div className="prose prose-invert">
-            <Markdown
-              rehypePlugins={[rehypeRaw]}
-              remarkPlugins={[remarkGfm]}
-            >
+            <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
               {game.content}
             </Markdown>
-            <div className="flex w-full">
-              <DownloadLinkList links={game.links_descarga} />
-            </div>
           </div>
         </div>
       </div>

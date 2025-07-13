@@ -5,7 +5,7 @@ export const createGameSchema = z.object({
   cover_url: z.string().url().min(1, { message: "Cover is required" }),
   genres: z.array(z.string()),
   download_links: z.array(
-    z.object({ link: z.string().url(), provider: z.string() })
+    z.object({ link: z.string().url(), label: z.string() })
   ),
   description: z.string().min(1, { message: "Description is required" }),
   platform: z.string().min(1, { message: "Platform is required" }),
