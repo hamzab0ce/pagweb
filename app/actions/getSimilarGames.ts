@@ -15,7 +15,7 @@ export async function getSimilarGames(gameId: number) {
       id: { not: gameId }, // evitar incluir el juego actual
       games_genres: {
         some: {
-          genre_id: { in: game.games_genres.map((g) => g.genre_id) },
+          genre: { in: game.games_genres.map((g) => g.genre).filter((genre): genre is string => genre !== null) },
         },
       },
     },
