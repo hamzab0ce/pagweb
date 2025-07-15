@@ -17,7 +17,7 @@ export default async function SimilarGamesView({ gameId }: { gameId: number }) {
           key={index}
           width={200}
           height={256}
-          alt="Most Visited Games"
+          alt="Similar Games Cover"
           src={cover_url}
           className="h-64 object-cover overflow-hidden rounded-2xl"
         />
@@ -28,10 +28,10 @@ export default async function SimilarGamesView({ gameId }: { gameId: number }) {
     <div className="p-3 rounded-lg flex-1 w-full bg-zinc-900 border border-zinc-800">
       <div className="flex">
         <Tag className="w-6 h-6 mr-2 text-amber-500" />
-        <h2 className="font-semibold">Similar Games</h2>
+        <h2 className="font-semibold">Juegos Similares:</h2>
       </div>
       {renderSimilarGames.length > 0 ? (
-        <ul className="flex flex-col mt-5 flex-wrap w-full gap-y-3">
+        <ul className="flex justify-center flex-col mt-5 flex-wrap w-full gap-y-3">
           {renderSimilarGames}
         </ul>
       ) : (
