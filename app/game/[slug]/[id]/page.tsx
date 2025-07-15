@@ -4,6 +4,7 @@ import DownloadLinkSection from "@/components/Game/DownLoadLinkSection";
 import GameDetailsView from "@/components/Game/GameDetailsView";
 import GameNotFound from "@/components/Game/GameNotFound";
 import PossiblePasswordsViewer from "@/components/Game/possiblePasswordsViewer";
+import SimilarGamesView from "@/components/Game/SimilarGamesView";
 import { Metadata } from "next";
 
 export async function generateMetadata({
@@ -47,6 +48,7 @@ export default async function Page({
           <div className="flex flex-col flex-1 gap-2">
             <DownloadLinkSection links={game.links_descarga} />
             <PossiblePasswordsViewer />
+            <SimilarGamesView gameId={game.id} />
           </div>
         </div>
       ) : (
