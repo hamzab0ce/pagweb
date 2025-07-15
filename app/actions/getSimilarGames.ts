@@ -11,6 +11,7 @@ export async function getSimilarGames(gameId: number) {
     return [];
   }
   const similarGames = await prisma.games.findMany({
+    take: 4,
     where: {
       id: { not: gameId }, // evitar incluir el juego actual
       games_genres: {

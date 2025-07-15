@@ -31,7 +31,7 @@ export default async function SimilarGamesView({ gameId }: { gameId: number }) {
         <h2 className="font-semibold">Similar Games</h2>
       </div>
       {renderSimilarGames.length > 0 ? (
-        <ul className="flex flex-col flex-wrap w-full gap-x-3">
+        <ul className="flex flex-col mt-5 flex-wrap w-full gap-y-3">
           {renderSimilarGames}
         </ul>
       ) : (
