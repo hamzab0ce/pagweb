@@ -4,10 +4,6 @@ import Link from "next/link";
 
 export default async function MostVisitedGames() {
   const MostVisitedGames = await getMostVisitedGames();
-  const generateRandomNumber = () => {
-    const num = Math.floor(Math.random() * 15) + 1;
-    return num % 2 === 0 ? num : -num; // Ensure the number is either positive or negative
-  };
   return (
     <div className="w-full min-h-64 bg-surface/10 px-10 py-5 rounded-2xl border border-border mb-5">
       <div className="text-center pb-5">
@@ -24,7 +20,6 @@ export default async function MostVisitedGames() {
                 key={index}
                 width={200}
                 height={256}
-                style={{ transform: `rotate(${generateRandomNumber()}deg)` }}
                 alt="Most Visited Games"
                 src={cover_url}
                 className="h-64 object-cover overflow-hidden rounded-2xl"
